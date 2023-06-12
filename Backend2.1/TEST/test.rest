@@ -1,0 +1,25 @@
+GET http://localhost:5202/users HTTP/1.1
+###
+
+GET http://localhost:5202/users/64863f07d4381a1b9090acab HTTP/1.1    
+###
+
+POST http://localhost:5202/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Kabouter Plop",
+    "isDigicorder": true,
+    "status": "Active"
+}
+###
+
+PUT http://localhost:5202/users/6486eeb60e444dbd5e9045f2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Kabouter Smal",
+    "isDigicorder": false,
+    "status": "Active"
+}
+###
