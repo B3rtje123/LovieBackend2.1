@@ -5,7 +5,7 @@ var settings = builder.Configuration.GetSection("MongoConnection");
 builder.Services.Configure<DatabaseSettings>(settings);
 
 // intefaces
-builder.Services.AddTransient<IMongoContext, MongoContext>();
+builder.Services.AddTransient<IMongoContext, MongoContext>(); // mongo context
 
 // repositories
 builder.Services.AddTransient<IUserRepository, UserRepository>();
