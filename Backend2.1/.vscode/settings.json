@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net7.0\\publish",
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/3f1c39c8-0659-4e2e-ae1b-42300d0104bd/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/LovieApp"
+}

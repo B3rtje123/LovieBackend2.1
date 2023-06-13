@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Semester2\\IndustryPoject\\DashBoard\\Backend2.1\\Backend2.1.csproj": {}
+    "D:\\Semester2\\IndustryPoject\\DashBoard\\LovieBackend2.1\\Backend2.1\\Backend2.1.csproj": {}
   },
   "projects": {
-    "D:\\Semester2\\IndustryPoject\\DashBoard\\Backend2.1\\Backend2.1.csproj": {
+    "D:\\Semester2\\IndustryPoject\\DashBoard\\LovieBackend2.1\\Backend2.1\\Backend2.1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Semester2\\IndustryPoject\\DashBoard\\Backend2.1\\Backend2.1.csproj",
+        "projectUniqueName": "D:\\Semester2\\IndustryPoject\\DashBoard\\LovieBackend2.1\\Backend2.1\\Backend2.1.csproj",
         "projectName": "Backend2.1",
-        "projectPath": "D:\\Semester2\\IndustryPoject\\DashBoard\\Backend2.1\\Backend2.1.csproj",
+        "projectPath": "D:\\Semester2\\IndustryPoject\\DashBoard\\LovieBackend2.1\\Backend2.1\\Backend2.1.csproj",
         "packagesPath": "C:\\Users\\bertd\\.nuget\\packages\\",
-        "outputPath": "D:\\Semester2\\IndustryPoject\\DashBoard\\Backend2.1\\obj\\",
+        "outputPath": "D:\\Semester2\\IndustryPoject\\DashBoard\\LovieBackend2.1\\Backend2.1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bertd\\AppData\\Roaming\\NuGet\\NuGet.Config"

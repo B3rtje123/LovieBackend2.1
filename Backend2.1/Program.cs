@@ -45,7 +45,7 @@ app.MapPut("/users/{id}", async (IUserService userService, string id, User user)
 {
     user.Id = id;
     await userService.UpdateUser(user);
-    return Results.Ok();
+    return Results.Ok(user);
 });
 
 
