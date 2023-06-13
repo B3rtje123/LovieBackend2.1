@@ -8,7 +8,8 @@ builder.Services.Configure<DatabaseSettings>(settings);
 builder.Services.AddTransient<IMongoContext, MongoContext>(); // mongo context
 
 // repositories
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>()
+.AddTransient<IActivityRepository, ActivityRepository>();
 
 // services
 builder.Services.AddTransient<IUserService, UserService>();
@@ -48,6 +49,20 @@ app.MapPut("/users/{id}", async (IUserService userService, string id, User user)
     return Results.Ok(user);
 });
 
+app.MapGet("/activity/{userId}", async (IUserService userService, string userId) =>
+{
+    List<ActivityLog> activityLogs = await userService.GetActivityLogsByUserId(userId);
+    return Results.Ok(activityLogs);
+});
+
+app.MapPost("/activity", async (IUserService userService, ActivityLog activityLog) =>
+{
+    //adding current time as timestamp
+    activityLog.TimeStamp = DateTime.Now;
+
+    ActivityLog newActivityLog = await userService.AddActivityLog(activityLog);
+    return Results.Ok(newActivityLog);
+});
 
 
 app.Run();

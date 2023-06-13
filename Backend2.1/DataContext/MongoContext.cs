@@ -2,6 +2,8 @@ public interface IMongoContext
 {
     IMongoDatabase Database { get; }
     IMongoCollection<User> UserCollection { get; }
+
+    IMongoCollection<ActivityLog> ActivityCollection { get; }
 }
 
 public class MongoContext : IMongoContext
@@ -34,6 +36,14 @@ public class MongoContext : IMongoContext
         get
         {
             return _database.GetCollection<User>(_settings.UserCollection);
+        }
+    }
+
+    public IMongoCollection<ActivityLog> ActivityCollection
+    {
+        get
+        {
+            return _database.GetCollection<ActivityLog>(_settings.ActivityCollection);
         }
     }
 }
