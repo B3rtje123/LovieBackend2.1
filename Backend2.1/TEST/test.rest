@@ -1,3 +1,4 @@
+
 GET http://localhost:5202/users HTTP/1.1
 ###
 
@@ -29,8 +30,12 @@ Content-Type: application/json
 
 {
     "userId": "64863f07d4381a1b9090acab",
-    "movement": "hand naar links"
+    "movement": "hand naar rechts"
 }
 ###
 
 GET http://localhost:5202/activity/64863f07d4381a1b9090acab HTTP/1.1
+###
+
+GET http://localhost:5202/activity/latest/648837804562a4d6a1a62788 HTTP/1.1
+###

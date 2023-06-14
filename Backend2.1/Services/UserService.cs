@@ -9,6 +9,7 @@ public interface IUserService
     Task UpdateUser(User user);
     Task<ActivityLog> AddActivityLog(ActivityLog activityLog);
     Task<List<ActivityLog>> GetActivityLogsByUserId(string userId);
+    Task<ActivityLog> GetLatestActivityLogByUserId(string userId);
 }
 
 public class UserService : IUserService
@@ -55,5 +56,10 @@ public class UserService : IUserService
     public async Task<List<ActivityLog>> GetActivityLogsByUserId(string userId)
     {
         return await _activityRepository.GetActivityLogsByUserId(userId);
+    }
+
+    public async Task<ActivityLog> GetLatestActivityLogByUserId(string userId)
+    {
+        return await _activityRepository.GetLatestActivityLogByUserId(userId);
     }
 }

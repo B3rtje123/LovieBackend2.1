@@ -4,6 +4,7 @@ public interface IActivityRepository
 {
     Task<ActivityLog> CreateActivityLog(ActivityLog activityLog);
     Task<List<ActivityLog>> GetActivityLogsByUserId(string userId);
+    Task<ActivityLog> GetLatestActivityLogByUserId(string userId);
 }
 
 public class ActivityRepository : IActivityRepository
@@ -24,5 +25,10 @@ public class ActivityRepository : IActivityRepository
     {
         await _context.ActivityCollection.InsertOneAsync(activityLog);
         return activityLog;
+    }
+
+    public async Task<ActivityLog> GetLatestActivityLogByUserId(string userId)
+    {
+        return await _context.ActivityCollection.Find(a => a.UserId == userId).SortByDescending(a => a.TimeStamp).FirstOrDefaultAsync();
     }
 }

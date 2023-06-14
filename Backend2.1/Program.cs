@@ -64,5 +64,11 @@ app.MapPost("/activity", async (IUserService userService, ActivityLog activityLo
     return Results.Ok(newActivityLog);
 });
 
+app.MapGet("activity/latest/{userId}", async (IUserService userService, string userId) =>
+{
+    ActivityLog activityLog = await userService.GetLatestActivityLogByUserId(userId);
+    return Results.Ok(activityLog);
+});
+
 
 app.Run();
