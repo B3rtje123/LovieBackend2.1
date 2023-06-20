@@ -2,7 +2,7 @@
 GET http://localhost:5202/users HTTP/1.1
 ###
 
-GET http://localhost:5202/users/64863f07d4381a1b9090acab HTTP/1.1    
+GET http://localhost:5202/users/648b10cbbe7cc37503820eab HTTP/1.1    
 ###
 
 POST http://localhost:5202/users HTTP/1.1
@@ -10,32 +10,37 @@ Content-Type: application/json
 
 {
     "name":"Kabouter Lui",
-    "isDigicorder": true,
+    "service": 0,
     "status": "Active"
 }
 ###
 
-PUT http://localhost:5202/users/6486eeb60e444dbd5e9045f2 HTTP/1.1
+PUT http://localhost:5202/users/648b11dabe7cc37503820eb1 HTTP/1.1
 Content-Type: application/json
 
+# {
+#     "name":"Bram",
+#     "service": 1,
+#     "status": "Active"
+# }
+
 {
-    "name":"Kabouter Smal",
-    "isDigicorder": false,
-    "status": "Active"
+    "service": 2
 }
+
 ###
 
 POST http://localhost:5202/activity HTTP/1.1
 Content-Type: application/json
 
 {
-    "userId": "64863f07d4381a1b9090acab",
-    "movement": "hand naar rechts"
+    "userId": "648b10cbbe7cc37503820eab",
+    "movement": "left arm raised"
 }
 ###
 
-GET http://localhost:5202/activity/64863f07d4381a1b9090acab HTTP/1.1
+GET http://localhost:5202/activity/648b10cbbe7cc37503820eab HTTP/1.1
 ###
 
-GET http://localhost:5202/activity/latest/648837804562a4d6a1a62788 HTTP/1.1
+GET http://localhost:5202/activity/latest/648b10cbbe7cc37503820eab HTTP/1.1
 ###

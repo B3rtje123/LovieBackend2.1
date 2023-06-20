@@ -45,6 +45,14 @@ app.MapDelete("/users/{id}", async (IUserService userService, string id) =>
 app.MapPut("/users/{id}", async (IUserService userService, string id, User user) =>
 {
     user.Id = id;
+    var oldUser = await userService.GetUser(id);
+    foreach (var prop in user.GetType().GetProperties())
+    {
+        if (prop.GetValue(user) == null)
+        {
+            prop.SetValue(user, prop.GetValue(oldUser));
+        }
+    }
     await userService.UpdateUser(user);
     return Results.Ok(user);
 });

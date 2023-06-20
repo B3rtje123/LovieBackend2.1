@@ -9,8 +9,8 @@ public class User
     
     [BsonElement("name")]
     public string Name { get; set; }    
-    [BsonElement("isDigicorder")]
-    public Boolean IsDigicorder { get; set; }
+    [BsonElement("service")]
+    public int Service { get; set; }
     [BsonElement("status")]
     public string Status { get; set; }
 }
